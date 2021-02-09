@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vsync_review/raw/manual_animated_clock.dart';
+import 'package:flutter_vsync_review/vsync/vsync_animated_clock.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,14 +31,28 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ManualAnimatedClock(),
+                  ),
+                );
+              },
               child: const Text('Manual Animated Clock'),
             ),
             SizedBox(
               height: 32,
             ),
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VsyncAnimatedClock(),
+                  ),
+                );
+              },
               child: const Text('Vsync Animated Clock'),
             ),
           ],
